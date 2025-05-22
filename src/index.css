@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white font-mono;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+
+  .animate-reverse-spin {
+    animation: reverse-spin 30s linear infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 5s ease-in-out infinite;
+  }
+
+  .animate-scroll-down {
+    animation: scroll-down 2s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  .animate-typing {
+    animation: typing 2.5s steps(40, end) forwards;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes reverse-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+  }
+
+  @keyframes scroll-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
